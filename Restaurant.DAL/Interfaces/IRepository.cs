@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Restaurant.DAL.Interfaces
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> : IDisposable where TEntity : class 
     {
         TEntity GetById(int id);
 

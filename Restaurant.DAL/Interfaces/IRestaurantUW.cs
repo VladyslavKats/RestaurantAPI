@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Restaurant.DAL.Interfaces
 {
-    public interface IRestaurantUW
+    public interface IRestaurantUW : IDisposable
     {
         IIngredientRepository Ingredients { get;}
 
