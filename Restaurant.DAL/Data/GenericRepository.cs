@@ -64,7 +64,16 @@ namespace Restaurant.DAL.Data
         public void Update(TEntity entity)
         {
             context.Entry(entity).State = EntityState.Modified;
-            context.SaveChanges();
+            
+        }
+
+        public void Add(TEntity entity)
+        {
+            var item = collection.Find(entity);
+            if (item == null)
+            {
+                collection.Add(entity);
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Restaurant.DAL.Interfaces
 
         IEnumerable<TEntity>  GetAll();
 
+        void Add(TEntity entity);
         void Update(TEntity entity);
 
         void Delete(int id);
