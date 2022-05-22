@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Restaurant.DAL.Interfaces
 {
-    public interface IRestaurantUW : IDisposable
+    public interface IRestaurantUW
     {
         IIngredientRepository Ingredients { get;}
 
@@ -14,12 +15,12 @@ namespace Restaurant.DAL.Interfaces
 
         IOrderRepository Orders { get;}
 
-        IPurchaseRepository Purchases { get;}
+        IOrderDetailRepository OrderDetails { get;}
 
         IUserRepository Users { get;}
 
         IRoleRepository Roles { get;}
 
-        void Save();
+        Task SaveAsync();
     }
 }

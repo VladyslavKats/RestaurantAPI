@@ -1,21 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Restaurant.DAL.Interfaces
 {
-    public interface IRepository<TEntity> : IDisposable where TEntity : class 
+    public interface IRepository<TEntity> 
     {
-        TEntity GetById(int id);
+        Task<TEntity> GetByIdAsync(int id);
 
-        IEnumerable<TEntity>  GetAll();
+        Task<TEntity> GetByIdWithDetailsAsync(int id);
 
-        void Add(TEntity entity);
-        void Update(TEntity entity);
+        Task<IEnumerable<TEntity>>  GetAllAsync();
 
-        void Delete(int id);
+        Task<IEnumerable<TEntity>>  GetAllWithDetailsAsync();
 
-        void Save();
+        Task AddAsync(TEntity entity);
+
+        Task UpdateAsync(TEntity entity);
+
+        Task DeleteAsync(TEntity entity);
+
+        Task SaveAsync();
 
     }
 }

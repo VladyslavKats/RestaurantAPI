@@ -7,5 +7,6 @@ namespace Restaurant.DAL.Interfaces
 {
     public interface IProductRepository : IRepository<Product>
     {
+        
     }
 }
